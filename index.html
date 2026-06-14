@@ -1,1 +1,406 @@
+HTML
+<!DOCTYPE html>
+<html id="html-root" lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Apex Cyber-Resilience Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        apexDark: '#030712',
+                        apexBlue: '#1e3a8a',
+                        apexLightBlue: '#0ea5e9',
+                        apexCyan: '#22d3ee',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Effet Glassmorphism */
+        .glass-card {
+            background: rgba(15, 23, 42, 0.45);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-nav {
+            background: rgba(3, 7, 18, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-b: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-apexDark text-slate-100 font-sans min-h-screen selection:bg-apexLightBlue/30 relative overflow-x-hidden">
 
+    <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-apexBlue/20 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+    <div class="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-apexLightBlue/10 rounded-full blur-[100px] pointer-events-none -z-10"></div>
+
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="p-2 bg-gradient-to-br from-apexLightBlue to-apexBlue rounded-xl text-white shadow-lg shadow-apexLightBlue/20">
+                    <i data-lucide="shield" class="w-6 h-6"></i>
+                </div>
+                <span class="text-xl font-bold tracking-wider uppercase bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">Apex Hub</span>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#mission" data-key="nav-mission" class="hover:text-apexCyan transition-colors">Our Mission</a>
+                <a href="#services" data-key="nav-services" class="hover:text-apexCyan transition-colors">Pillars</a>
+                <a href="#support" data-key="nav-support" class="hover:text-apexCyan transition-colors">IT Support</a>
+                <a href="#partenaires" data-key="nav-get-involved" class="hover:text-apexCyan transition-colors">Get Involved</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <button id="lang-switch" onclick="toggleLanguage()" class="px-3 py-1.5 rounded-lg border border-slate-700 hover:border-apexLightBlue text-xs font-bold text-slate-300 transition-colors">
+                    FR
+                </button>
+
+                <a href="https://wa.me/votre_numero" target="_blank" class="px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl bg-gradient-to-r from-apexBlue to-apexLightBlue hover:from-apexLightBlue hover:to-apexCyan text-white text-xs sm:text-sm font-semibold transition-all duration-300 shadow-md shadow-apexBlue/50 flex items-center gap-2">
+                    <i data-lucide="message-square" class="w-4 h-4"></i> <span data-key="nav-join">Join Community</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <header id="mission" class="pt-36 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-apexBlue/30 border border-apexLightBlue/30 text-apexCyan text-xs font-semibold uppercase tracking-wider">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> <span data-key="hero-badge">Based in Kakuma, Kenya</span>
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                    <span data-key="hero-title1">Building a safer</span> <br>
+                    <span data-key="hero-title2" class="bg-gradient-to-r from-apexLightBlue via-apexCyan to-white bg-clip-text text-transparent">digital future for all.</span>
+                </h1>
+                <p data-key="hero-desc" class="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto lg:mx-0">
+                    Empowering youth and vulnerable populations through digital literacy, advanced technology education (Python, Linux), and proactive cybersecurity awareness.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                    <a href="https://wa.me/votre_numero" target="_blank" data-key="btn-alerts" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-apexBlue via-apexLightBlue to-apexCyan font-bold text-white shadow-lg shadow-apexBlue/30 hover:scale-[1.02] transition-transform text-center">
+                        WhatsApp Alerts Channel
+                    </a>
+                    <a href="#support" data-key="btn-help" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-800/80 border border-slate-700 hover:bg-slate-800 font-bold text-slate-200 transition-all text-center">
+                        Seek IT Help
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="relative w-72 h-72 sm:w-96 sm:h-96 glass-card rounded-3xl flex flex-col items-center justify-center border border-apexLightBlue/20 p-8 shadow-2xl shadow-apexBlue/10 animate-pulse duration-[4000ms]">
+                    <div class="absolute -top-4 -right-4 p-4 glass-card rounded-2xl text-apexCyan">
+                        <i data-lucide="terminal" class="w-8 h-8"></i>
+                    </div>
+                    <div class="absolute -bottom-4 -left-4 p-4 glass-card rounded-2xl text-emerald-400">
+                        <i data-lucide="activity" class="w-8 h-8"></i>
+                    </div>
+                    <i data-lucide="shield-check" class="w-32 h-32 text-apexLightBlue drop-shadow-[0_0_25px_rgba(14,165,233,0.4)]"></i>
+                    <p class="text-xs font-mono text-slate-500 mt-6 text-center">SECURE NETWORK // APEX_SENTINEL_ACTIVE</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="services" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 data-key="pillar-title" class="text-3xl font-bold text-white sm:text-4xl">Our Pillars of Action</h2>
+            <p data-key="pillar-desc" class="text-slate-400 mt-4">An integrated approach combining protection, engineering skills, and direct support.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="glass-card p-8 rounded-2xl border border-apexLightBlue/10 hover:border-apexLightBlue/40 transition-colors">
+                <div class="p-3 bg-apexBlue/40 text-apexCyan rounded-xl w-fit mb-6">
+                    <i data-lucide="lock" class="w-6 h-6"></i>
+                </div>
+                <h3 data-key="card1-title" class="text-xl font-bold text-white mb-3">Proactive Cybersecurity</h3>
+                <p data-key="card1-desc" class="text-slate-400 text-sm leading-relaxed">Live alerts on local scams, prevention of mobile money fraud, and digital data protection training.</p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl border border-apexLightBlue/10 hover:border-apexLightBlue/40 transition-colors">
+                <div class="p-3 bg-apexBlue/40 text-apexLightBlue rounded-xl w-fit mb-6">
+                    <i data-lucide="code-2" class="w-6 h-6"></i>
+                </div>
+                <h3 data-key="card2-title" class="text-xl font-bold text-white mb-3">IT & Technical Education</h3>
+                <p data-key="card2-desc" class="text-slate-400 text-sm leading-relaxed">Hands-on workshops focused on Linux system administration, Python automation scripts, and core computing skills.</p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl border border-apexLightBlue/10 hover:border-apexLightBlue/40 transition-colors">
+                <div class="p-3 bg-apexBlue/40 text-apexCyan rounded-xl w-fit mb-6">
+                    <i data-lucide="life-buoy" class="w-6 h-6"></i>
+                </div>
+                <h3 data-key="card3-title" class="text-xl font-bold text-white mb-3">IT Support & Incident Handling</h3>
+                <p data-key="card3-desc" class="text-slate-400 text-sm leading-relaxed">A secure reporting space to guide and assist community members facing technical issues or hacking suspicions.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="support" class="py-20 bg-slate-950/40 border-y border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 space-y-4">
+                    <h2 data-key="form-heading" class="text-3xl font-bold text-white">Need technical help or want to report an incident?</h2>
+                    <p data-key="form-subheading" class="text-slate-400 text-sm leading-relaxed">
+                        Are you a victim of a mobile money scam, a suspicious message, or network issues? Describe your situation. Our IT Support team handles your reports with strict confidentiality.
+                    </p>
+                    <div class="flex items-center gap-3 text-sm text-apexCyan pt-2">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400"></i> <span data-key="form-security-note">Encrypted data & privacy preserved</span>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <form class="glass-card p-6 sm:p-8 rounded-2xl space-y-4" onsubmit="event.preventDefault(); alert('Incident submitted securely.');">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label data-key="lbl-name" class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Your Name (Optional)</label>
+                                <input type="text" placeholder="Anonymous" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-apexLightBlue text-sm">
+                            </div>
+                            <div>
+                                <label data-key="lbl-contact" class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Contact (WhatsApp or Email)</label>
+                                <input type="text" required placeholder="Ex: +254..." class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-apexLightBlue text-sm">
+                            </div>
+                        </div>
+                        <div>
+                            <label data-key="lbl-type" class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Incident Type</label>
+                            <select id="incident-select" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-apexLightBlue text-sm">
+                                <option data-opt="1">Mobile Money Fraud (M-Pesa, etc.)</option>
+                                <option data-opt="2">Suspicious Phishing / Fake Message</option>
+                                <option data-opt="3">Hardware or Software Failure</option>
+                                <option data-opt="4">Inquiry / Other Technical Support</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label data-key="lbl-desc" class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Description of Facts</label>
+                            <textarea rows="4" required placeholder="Provide as many details as possible without sharing passwords..." class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-apexLightBlue text-sm"></textarea>
+                        </div>
+                        <button type="submit" data-key="btn-submit-inc" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-apexBlue to-apexLightBlue hover:from-apexLightBlue hover:to-apexCyan text-white font-bold text-sm shadow-md transition-all">
+                            Submit Secure Incident Report
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="partenaires" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <h2 data-key="partner-title" class="text-3xl font-bold text-white">Become an Apex Hub Partner</h2>
+            <p data-key="partner-desc" class="text-slate-400 mt-3 text-sm">Every technical, material, or financial contribution strengthens digital safety and tech education in the community.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="glass-card p-6 rounded-xl flex flex-col justify-between">
+                <div>
+                    <div class="text-apexCyan mb-4"><i data-lucide="users" class="w-6 h-6"></i></div>
+                    <h4 data-key="part1-title" class="text-lg font-bold text-white mb-2">Share Your Skills</h4>
+                    <p data-key="part1-desc" class="text-slate-400 text-xs leading-relaxed">Become a mentor or conduct remote technical workshops in Cybersecurity, Linux, or Python.</p>
+                </div>
+                <button data-key="part-btn1" class="mt-6 w-full py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-200 border border-slate-700 transition-colors">Join as Mentor</button>
+            </div>
+            
+            <div class="glass-card p-6 rounded-xl flex flex-col justify-between">
+                <div>
+                    <div class="text-apexLightBlue mb-4"><i data-lucide="laptop" class="w-6 h-6"></i></div>
+                    <h4 data-key="part2-title" class="text-lg font-bold text-white mb-2">Donate Hardware</h4>
+                    <p data-key="part2-desc" class="text-slate-400 text-xs leading-relaxed">Donate laptops, routers, or security keys to equip our physical training computer labs.</p>
+                </div>
+                <button data-key="part-btn2" class="mt-6 w-full py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-200 border border-slate-700 transition-colors">Donate Material</button>
+            </div>
+
+            <div class="glass-card p-6 rounded-xl flex flex-col justify-between">
+                <div>
+                    <div class="text-apexCyan mb-4"><i data-lucide="graduation-cap" class="w-6 h-6"></i></div>
+                    <h4 data-key="part3-title" class="text-lg font-bold text-white mb-2">Sponsor Training</h4>
+                    <p data-key="part3-desc" class="text-slate-400 text-xs leading-relaxed">Sponsor bootcamps and certification paths to help youth kickstart professional IT careers.</p>
+                </div>
+                <button data-key="part-btn3" class="mt-6 w-full py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-200 border border-slate-700 transition-colors">Sponsor a Workshop</button>
+            </div>
+
+            <div class="glass-card p-6 rounded-xl flex flex-col justify-between">
+                <div>
+                    <div class="text-apexLightBlue mb-4"><i data-lucide="megaphone" class="w-6 h-6"></i></div>
+                    <h4 data-key="part4-title" class="text-lg font-bold text-white mb-2">Fund Cyber-Alerts</h4>
+                    <p data-key="part4-desc" class="text-slate-400 text-xs leading-relaxed">Help us maintain and scale our community monitoring tools fighting scam and phishing.</p>
+                </div>
+                <button data-key="part-btn4" class="mt-6 w-full py-2.5 rounded-lg bg-gradient-to-r from-apexBlue to-apexLightBlue text-xs font-bold text-white transition-opacity hover:opacity-90">Fund a Campaign</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-slate-900 bg-slate-950 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-12">
+            
+            <div class="flex flex-col sm:flex-row items-center gap-6 p-6 glass-card rounded-2xl border border-slate-800/60 max-w-md">
+                <div class="w-20 h-20 rounded-full bg-slate-800 border-2 border-apexLightBlue flex items-center justify-center text-slate-400 shrink-0">
+                    <i data-lucide="user" class="w-10 h-10"></i>
+                </div>
+                <div class="text-center sm:text-left space-y-1">
+                    <h4 class="text-lg font-bold text-white">H.B Elie</h4>
+                    <p data-key="founder-tag" class="text-xs text-apexCyan font-medium">Founder & Administrator</p>
+                    <p data-key="founder-desc" class="text-xs text-slate-400 leading-relaxed">Certified IT and Cybersecurity Professional, dedicated to community digital resilience.</p>
+                </div>
+            </div>
+
+            <div class="text-center md:text-right space-y-4">
+                <div class="text-xl font-bold text-white">The Apex Cyber-Resilience Hub</div>
+                <p data-key="footer-pitch" class="text-xs text-slate-500 max-w-sm md:ml-auto">Together, let's build a safe digital workspace for inclusion and community security.</p>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-900/60 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+            <p>&copy; 2026 The Apex Cyber-Resilience Hub. All rights reserved.</p>
+            <div class="flex gap-6">
+                <a href="#" data-key="foot-link1" class="hover:text-slate-400">Security & Privacy</a>
+                <a href="#" data-key="foot-link2" class="hover:text-slate-400">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            en: {
+                "lang-btn": "FR",
+                "nav-mission": "Our Mission",
+                "nav-services": "Pillars",
+                "nav-support": "IT Support",
+                "nav-get-involved": "Get Involved",
+                "nav-join": "Join Community",
+                "hero-badge": "Based in Kakuma, Kenya",
+                "hero-title1": "Building a safer",
+                "hero-title2": "digital future for all.",
+                "hero-desc": "Empowering youth and vulnerable populations through digital literacy, advanced technology education (Python, Linux), and proactive cybersecurity awareness.",
+                "btn-alerts": "WhatsApp Alerts Channel",
+                "btn-help": "Seek IT Help",
+                "pillar-title": "Our Pillars of Action",
+                "pillar-desc": "An integrated approach combining protection, engineering skills, and direct support.",
+                "card1-title": "Proactive Cybersecurity",
+                "card1-desc": "Live alerts on local scams, prevention of mobile money fraud, and digital data protection training.",
+                "card2-title": "IT & Technical Education",
+                "card2-desc": "Hands-on workshops focused on Linux system administration, Python automation scripts, and core computing skills.",
+                "card3-title": "IT Support & Incident Handling",
+                "card3-desc": "A secure reporting space to guide and assist community members facing technical issues or hacking suspicions.",
+                "form-heading": "Need technical help or want to report an incident?",
+                "form-subheading": "Are you a victim of a mobile money scam, a suspicious message, or network issues? Describe your situation. Our IT Support team handles your reports with strict confidentiality.",
+                "form-security-note": "Encrypted data & privacy preserved",
+                "lbl-name": "Your Name (Optional)",
+                "lbl-contact": "Contact (WhatsApp or Email)",
+                "lbl-type": "Incident Type",
+                "lbl-desc": "Description of Facts",
+                "btn-submit-inc": "Submit Secure Incident Report",
+                "partner-title": "Become an Apex Hub Partner",
+                "partner-desc": "Every technical, material, or financial contribution strengthens digital safety and tech education in the community.",
+                "part1-title": "Share Your Skills",
+                "part1-desc": "Become a mentor or conduct remote technical workshops in Cybersecurity, Linux, or Python.",
+                "part-btn1": "Join as Mentor",
+                "part2-title": "Donate Hardware",
+                "part2-desc": "Donate laptops, routers, or security keys to equip our physical training computer labs.",
+                "part-btn2": "Donate Material",
+                "part3-title": "Sponsor Training",
+                "part3-desc": "Sponsor bootcamps and certification paths to help youth kickstart professional IT careers.",
+                "part-btn3": "Sponsor a Workshop",
+                "part4-title": "Fund Cyber-Alerts",
+                "part4-desc": "Help us maintain and scale our community monitoring tools fighting scam and phishing.",
+                "part-btn4": "Fund a Campaign",
+                "founder-tag": "Founder & Administrator",
+                "founder-desc": "Certified IT and Cybersecurity Professional, dedicated to community digital resilience.",
+                "footer-pitch": "Together, let's build a safe digital workspace for inclusion and community security.",
+                "foot-link1": "Security & Privacy",
+                "foot-link2": "Terms of Service",
+                "opt1": "Mobile Money Fraud (M-Pesa, etc.)",
+                "opt2": "Suspicious Phishing / Fake Message",
+                "opt3": "Hardware or Software Failure",
+                "opt4": "Inquiry / Other Technical Support"
+            },
+            fr: {
+                "lang-btn": "EN",
+                "nav-mission": "Notre Mission",
+                "nav-services": "Piliers",
+                "nav-support": "Support IT",
+                "nav-get-involved": "Nous Soutenir",
+                "nav-join": "Rejoindre la communauté",
+                "hero-badge": "Basé à Kakuma, Kenya",
+                "hero-title1": "Bâtir un avenir numérique",
+                "hero-title2": "plus sûr pour tous.",
+                "hero-desc": "Autonomisation des jeunes et des populations vulnérables grâce à l'alphabétisation numérique, l'éducation technologique avancée (Python, Linux) et la sensibilisation proactive à la cybersécurité.",
+                "btn-alerts": "Canal d'Alertes WhatsApp",
+                "btn-help": "Demander de l'Aide IT",
+                "pillar-title": "Nos Piliers d'Action",
+                "pillar-desc": "Une approche intégrée alliant protection, compétences d'ingénierie et support direct.",
+                "card1-title": "Cybersécurité Proactive",
+                "card1-desc": "Alertes en direct sur les arnaques locales, prévention des fraudes au Mobile Money et éducation à la protection des données.",
+                "card2-title": "Éducation IT & Technique",
+                "card2-desc": "Ateliers pratiques axés sur l'administration système Linux, les scripts automatisés en Python et la maîtrise des outils informatiques.",
+                "card3-title": "Support IT & Incidents",
+                "card3-desc": "Un espace de signalement sécurisé pour accompagner les membres de la communauté face aux pannes ou suspicions de piratage.",
+                "form-heading": "Besoin d'aide technique ou signaler un incident ?",
+                "form-subheading": "Victime d'une arnaque Mobile Money, d'un message suspect ou d'une panne réseau ? Décrivez votre situation. Notre pôle IT Support traite vos rapports dans la plus stricte confidentialité.",
+                "form-security-note": "Données chiffrées & anonymat préservé",
+                "lbl-name": "Votre Nom (Optionnel)",
+                "lbl-contact": "Contact (WhatsApp ou Email)",
+                "lbl-type": "Type d'Incident",
+                "lbl-desc": "Description des Faits",
+                "btn-submit-inc": "Soumettre le rapport d'incident",
+                "partner-title": "Devenir un Partenaire de l'Apex Hub",
+                "partner-desc": "Chaque contribution technique, matérielle ou financière renforce la sécurité et l'éducation numérique de la communauté.",
+                "part1-title": "Partager vos Compétences",
+                "part1-desc": "Devenez mentor ou animez des ateliers techniques à distance en Cybersécurité, Linux ou Python.",
+                "part-btn1": "Devenir Mentor",
+                "part2-title": "Don de Matériel",
+                "part2-desc": "Offrez des ordinateurs, routeurs ou clés de sécurité pour équiper nos laboratoires informatiques physiques.",
+                "part-btn2": "Donner du Matériel",
+                "part3-title": "Soutenir des Formations",
+                "part3-desc": "Financez des sessions de certification pour permettre aux jeunes d'accéder à des carrières IT.",
+                "part-btn3": "Soutenir un Atelier",
+                "part4-title": "Financer nos Cyber-Alertes",
+                "part4-desc": "Aidez-nous à maintenir nos outils de veille contre la fraude et le phishing local.",
+                "part-btn4": "Soutenir la Veille",
+                "founder-tag": "Fondateur & Administrateur",
+                "founder-desc": "Professionnel certifié en IT et Cybersécurité, engagé dans la résilience numérique communautaire.",
+                "footer-pitch": "Ensemble, bâtissons un espace numérique de confiance pour l'inclusion numérique et la sécurité.",
+                "foot-link1": "Sécurité & Confidentialité",
+                "foot-link2": "Mentions Légales",
+                "opt1": "Fraude Mobile Money (M-Pesa, etc.)",
+                "opt2": "Suspicious Phishing / Message suspect",
+                "opt3": "Panne logicielle ou matérielle",
+                "opt4": "Demande d'information ou autre"
+            }
+        };
+
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'fr' : 'en';
+            
+            // Mise à jour de l'attribut lang global
+            document.getElementById('html-root').setAttribute('lang', currentLang);
+            
+            // Mise à jour du texte du bouton (Propose FR si le site passe en EN, et vice-versa)
+            document.getElementById('lang-switch').innerText = translations[currentLang]["lang-btn"];
+
+            // Traduction de tous les éléments standards textuels
+            document.querySelectorAll('[data-key]').forEach(element => {
+                const key = element.getAttribute('data-key');
+                if (translations[currentLang][key]) {
+                    element.innerText = translations[currentLang][key];
+                }
+            });
+
+            // Traduction spécifique des options du menu déroulant (Select)
+            document.querySelectorAll('#incident-select option').forEach(option => {
+                const optKey = 'opt' + option.getAttribute('data-opt');
+                if (translations[currentLang][optKey]) {
+                    option.text = translations[currentLang][optKey];
+                }
+            });
+        }
+
+        // Lancement initial des icônes vectorielles
+        lucide.createIcons();
+    </script>
+</body>
+</html>
